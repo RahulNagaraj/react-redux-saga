@@ -1,24 +1,34 @@
 import React from 'react';
-import logo from '../logo.svg';
+import { Route, Link } from 'react-router-dom';
+import IncDecApp from '../IncDecApp/IncDec';
 import './App.css';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+      <header>
+        <Link to="/">Home</Link> |
+        <Link to="/inc-dec-app"> Increment-Decrement App</Link> |
+        <Link to="/about-us"> About</Link>
       </header>
+
+      <main>
+        <Route
+          exact
+          path="/"
+          render={() => {
+            return <h1>Hello</h1>;
+          }}
+        />
+        <Route path="/inc-dec-app" component={IncDecApp} />
+        <Route
+          exact
+          path="/about-us"
+          render={() => {
+            return <h1>About Us</h1>;
+          }}
+        />
+      </main>
     </div>
   );
 }
