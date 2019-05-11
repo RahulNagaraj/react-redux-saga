@@ -19,10 +19,6 @@ const renderApp = () => {
     </Provider>,
     root
   );
-
-  // if (process.env.NODE_ENV !== 'production' && module.hot) {
-  //   module.hot.accept('./App/App', renderApp);
-  // }
 };
 
 renderApp();
